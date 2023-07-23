@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 8009;
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://authmern.netlify.app/',
     credentials: true,
 })); // to remove CORS(cross oregin resource shering) error (front end  port 3000 and back end port 8009) 
 app.use(router);
