@@ -20,17 +20,18 @@ const PORT = process.env.PORT || 8009;
 
 // to remove CORS(cross oregin resource shering) error (front end  port 3000 and back end port 8009) 
 
-const allowedOrigins = ['https://authmern.netlify.app'];
-app.use(cors({
-  origin: function (origin, callback) {
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
+// const allowedOrigins = ['https://authmern.netlify.app'];
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   }
+// }));
 
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(router);
